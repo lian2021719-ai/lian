@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>立安生物科技製藥股份有限公司｜草本專業製藥</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="立安生物科技製藥股份有限公司，專注草本保健品、中藥製劑與功能性食品之研發與代工，提供GMP規格生產與嚴謹品質管理。">
+  <style>
+    :root {
+      --primary: #356b4b;
+      --primary-light: #5f9470;
+      --accent: #c9a06a;
+      --bg: #f5f3ea;
+      --text: #333333;
+      --white: #ffffff;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Header & Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(245, 243, 234, 0.96);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+
+    .logo-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      background: radial-gradient(circle at 30% 20%, #e7f4ea, #e0e6d6);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #e7f4ea, #f7f1e6);
+      padding: 4rem 1.25rem 3.5rem;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(53,107,75,0.2);
+      font-size: 0.75rem;
+      color: var(--primary);
+      background-color: rgba(255,255,255,0.8);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-title {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #243528;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      padding: 0.6rem 1.3rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: 1px solid var(--primary);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(53,107,75,0.07);
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: #777;
+    }
+
+    .hero-meta span {
+      margin-right: 1rem;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-card {
+      background-color: var(--white);
+      border-radius: 18px;
+      padding: 1.25rem;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-tag {
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card-list {
+      list-style: none;
+      font-size: 0.85rem;
+      display: grid;
+      gap: 0.35rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card-list li::before {
+      content: "●";
+      font-size: 0.55rem;
+      margin-right: 0.4rem;
+      color: var(--primary);
+    }
+
+    .hero-card-note {
+      font-size: 0.75rem;
+      color: #999;
+    }
+
+    .hero-leaf {
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      border-radius: 999px;
+      border: 1px solid rgba(53,107,75,0.25);
+      right: -20px;
+      top: -20px;
+      background: radial-gradient(circle at 30% 30%, #f4fbe7, #e2f1e4);
+      opacity: 0.9;
+    }
+
+    /* Generic sections */
+    section {
+      padding: 3.5rem 1.25rem;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.25rem;
+      color: #1f3024;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    /* About */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(53,107,75,0.4);
+      color: var(--primary);
+      background-color: rgba(255,255,255,0.9);
+      text-align: center;
+    }
+
+    .about-card {
+      background-color: var(--white);
+      border-radius: 16px;
+      padding: 1.2rem;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+      font-size: 0.85rem;
+    }
+
+    .about-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    /* Products */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--white);
+      border-radius: 16px;
+      padding: 1.2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      color: #777;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #264432;
+    }
+
+    .card-list {
+      list-style: none;
+      font-size: 0.85rem;
+      margin-top: 0.3rem;
+    }
+
+    .card-list li {
+      margin-bottom: 0.2rem;
+    }
+
+    .card-list li::before {
+      content: "– ";
+      color: var(--primary);
+    }
+
+    /* Quality */
+    .quality-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .quality-steps {
+      list-style: none;
+      font-size: 0.9rem;
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .quality-steps li::before {
+      content: "▢";
+      font-size: 0.8rem;
+      margin-right: 0.4rem;
+      color: var(--primary);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.75rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+      border: 1px dashed rgba(53,107,75,0.5);
+      color: var(--primary);
+      background-color: rgba(255,255,255,0.95);
+    }
+
+    .quality-box {
+      border-radius: 16px;
+      padding: 1.25rem;
+      border: 1px solid rgba(53,107,75,0.35);
+      background: linear-gradient(145deg, #f2f8f3, #f9f4ec);
+      font-size: 0.85rem;
+    }
+
+    /* News */
+    .news-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .news-item {
+      background-color: var(--white);
+      border-radius: 14px;
+      padding: 1rem;
+      border: 1px solid rgba(0,0,0,0.04);
+      font-size: 0.85rem;
+    }
+
+    .news-date {
+      font-size: 0.75rem;
+      color: #888;
+      margin-bottom: 0.35rem;
+    }
+
+    .news-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: #264432;
+    }
+
+    .news-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      margin-top: 0.35rem;
+      font-size: 0.8rem;
+      color: var(--primary);
+    }
+
+    /* Contact */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 2rem;
+    }
+
+    .contact-info {
+      font-size: 0.9rem;
+    }
+
+    .contact-info p {
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-info strong {
+      font-weight: 600;
+    }
+
+    .contact-tags {
+      margin-top: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .contact-tag {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background-color: rgba(53,107,75,0.06);
+      color: #395b42;
+    }
+
+    form {
+      background-color: var(--white);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+      font-size: 0.9rem;
+    }
+
+    .form-row {
+      margin-bottom: 0.85rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 0.55rem 0.7rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 0.9rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      background-color: #fcfcfa;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 1px rgba(53,107,75,0.15);
+      background-color: #ffffff;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .form-hint {
+      font-size: 0.75rem;
+      color: #999;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-actions {
+      margin-top: 0.6rem;
+      text-align: right;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(0,0,0,0.06);
+      padding: 1.2rem 1.25rem;
+      font-size: 0.8rem;
+      color: #777;
+      background-color: #f0ebdf;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-inner,
+      .about-layout,
+      .quality-layout,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .hero-title {
+        font-size: 1.7rem;
+      }
+
+      .cards-grid,
+      .news-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        font-size: 0.85rem;
+      }
+
+      .cards-grid,
+      .news-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <div class="logo-mark">草本</div>
+        <div>立安生物科技製藥股份有限公司</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">關於我們</a>
+        <a href="#products">產品與服務</a>
+        <a href="#quality">品質與檢驗</a>
+        <a href="#news">最新消息</a>
+        <a href="#contact">聯絡我們</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 首頁 Hero -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">
+          以草本為本 · 以品質為先
+        </div>
+        <h1 class="hero-title">專注中藥與保健品研發的專業製藥夥伴</h1>
+        <p class="hero-subtitle">
+          從配方設計、原料把關，到GMP規格製造與檢驗，我們致力於將傳承百年的中醫藥智慧，轉化為符合現代科學標準的安心產品。
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">聯繫洽詢</a>
+          <a href="#products" class="btn-outline">了解產品與服務</a>
+        </div>
+        <div class="hero-meta">
+          <span>▪ 客製膠囊／粉包／錠劑 OEM / ODM</span>
+          <span>▪ 中藥飲片／複方產品開發</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-tag">核心專長</div>
+          <div class="hero-card-title">一條龍草本製劑服務</div>
+          <ul class="hero-card-list">
+            <li>產品企劃與配方設計</li>
+            <li>中藥材來源評估與品質檢驗</li>
+            <li>GMP廠房生產與包裝作業</li>
+            <li>協助法規與標示審閱</li>
+          </ul>
+          <div class="hero-card-note">
+            以專業藥師與研發團隊為後盾，陪伴品牌從構想到上市。
+          </div>
+        </div>
+        <div class="hero-leaf"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 關於我們 -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">關於我們</h2>
+        <p class="section-subtitle">結合傳統草本底蘊與現代藥品思維</p>
+      </div>
+
+      <div class="about-layout">
+        <div class="about-text">
+          <p>
+            立安生物科技製藥股份有限公司位於台灣，專注於中藥製劑與功能性保健食品之研發製造，從選材、製程到品質管理，皆依循嚴謹的製藥規範執行。
+          </p>
+          <p>
+            我們擁有專業藥師、中醫藥背景與分析檢驗團隊，擅長將經典方劑與現代營養學結合，協助客戶打造兼具安全性與市場競爭力的草本產品。
+          </p>
+          <div class="about-highlights">
+            <div class="pill">GMP 生產環境</div>
+            <div class="pill">客製化配方開發</div>
+            <div class="pill">完整檢驗與留樣</div>
+            <div class="pill">少量試產到量產彈性規劃</div>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <h3>服務理念</h3>
+          <p>
+            我們相信：「好產品來自看得見的用心」。  
+            從原料來源、每一批製程紀錄，到最終成品檢驗數據，皆以透明、可追溯為原則，讓品牌與消費者都能放心信賴。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 產品與服務 -->
+  <section id="products">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">產品與服務</h2>
+        <p class="section-subtitle">提供多元劑型與客製化草本方案</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-tag">OEM / ODM</div>
+          <div class="card-title">保健食品與中藥產品開發</div>
+          <ul class="card-list">
+            <li>膠囊、錠劑、粉包、顆粒等劑型設計</li>
+            <li>經典方劑調整、機能複方設計</li>
+            <li>配方打樣與穩定性評估</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">Herbal Solutions</div>
+          <div class="card-title">草本原料與萃取應用</div>
+          <ul class="card-list">
+            <li>中藥材篩選與規格訂定</li>
+            <li>單味／複方草本混合粉</li>
+            <li>依需求搭配功能性原料</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">Quality & Compliance</div>
+          <div class="card-title">品質管理與檢驗服務</div>
+          <ul class="card-list">
+            <li>重金屬與微生物檢驗規劃</li>
+            <li>原料進貨與成品放行標準制定</li>
+            <li>文件建置與法規標示諮詢</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 品質與檢驗 -->
+  <section id="quality">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">品質與檢驗</h2>
+        <p class="section-subtitle">以科學數據守護每一批產品的穩定與安全</p>
+      </div>
+
+      <div class="quality-layout">
+        <div>
+          <ul class="quality-steps">
+            <li>原料來源與供應商評估、建立規格書</li>
+            <li>原料進貨檢驗（外觀、重金屬、微生物等）</li>
+            <li>製程中關鍵管制點紀錄與查核</li>
+            <li>成品檢驗與留樣管理</li>
+            <li>批號追溯與文件保存制度</li>
+          </ul>
+          <div class="badge-row">
+            <span class="badge">批次可追溯管理</span>
+            <span class="badge">完整檢驗報告</span>
+            <span class="badge">文件化SOP流程</span>
+          </div>
+        </div>
+        <div class="quality-box">
+          我們以製藥思維面對每一瓶保健品與中藥製劑，  
+          將「安全、穩定、可追溯」視為最低標準。  
+          若您需要合作檢驗項目或既有規格導入，我們亦能依照品牌需求進行客製化規劃。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最新消息 -->
+  <section id="news">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">最新消息</h2>
+        <p class="section-subtitle">研發動態、產品上架與重要公告</p>
+      </div>
+
+      <div class="news-list">
+        <div class="news-item">
+          <div class="news-date">2025-11-01</div>
+          <div class="news-title">全新草本配方系列開發服務上線</div>
+          <p>
+            提供從配方企劃、試產到商業化量產的一站式服務，協助品牌快速推出具市場差異化的草本產品。
+          </p>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2025-09-15</div>
+          <div class="news-title">設備與檢驗儀器升級公告</div>
+          <p>
+            實驗室導入新型檢驗設備，以提升重金屬與微生物檢測效率與準確度，強化品質把關。
+          </p>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2025-07-30</div>
+          <div class="news-title">歡迎洽談OEM / ODM合作</div>
+          <p>
+            若您有品牌產品開發需求，歡迎透過下方表單或電話聯繫，我們將安排專人與您討論合作方案。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 聯絡我們 -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">聯絡我們</h2>
+        <p class="section-subtitle">歡迎洽談OEM / ODM或技術合作</p>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-info">
+          <p><strong>立安生物科技製藥股份有限公司</strong></p>
+          <p>地址：請填寫公司地址</p>
+          <p>電話：請填寫聯絡電話</p>
+          <p>電子郵件：<a href="mailto:info@example.com">info@example.com</a></p>
+          <p>統一編號：請填寫</p>
+          <div class="contact-tags">
+            <span class="contact-tag">OEM / ODM 合作</span>
+            <span class="contact-tag">配方開發諮詢</span>
+            <span class="contact-tag">品質與檢驗規劃</span>
+          </div>
+        </div>
+
+        <form action="mailto:info@example.com" method="post" enctype="text/plain">
+          <div class="form-hint">
+            您也可以直接填寫以下表單，我們將儘速與您聯絡。（此表單會開啟您的預設郵件程式）
+          </div>
+          <div class="form-row">
+            <label for="name">您的姓名 / 公司名稱</label>
+            <input type="text" id="name" name="姓名" required />
+          </div>
+          <div class="form-row">
+            <label for="email">電子郵件</label>
+            <input type="email" id="email" name="Email" required />
+          </div>
+          <div class="form-row">
+            <label for="subject">洽詢主題</label>
+            <input type="text" id="subject" name="主題" placeholder="例如：OEM合作、配方開發、報價洽詢…" />
+          </div>
+          <div class="form-row">
+            <label for="message">洽詢內容</label>
+            <textarea id="message" name="內容" placeholder="請簡述您的需求、產品方向或預計劑型等…"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">送出洽詢</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> 立安生物科技製藥股份有限公司. All rights reserved.</div>
+      <div>本網站內容僅供產品與服務介紹，實際標示與相關規範依主管機關規定為準。</div>
+    </div>
+  </footer>
+
+  <script>
+    // 自動顯示年份
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
