@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>立安生物科技製藥股份有限公司 | Li-An Biotech</title>
   <style>
     :root {
       --green-main: #2f9e44;
-      --green-dark: #238636;
-      --green-soft: #7bc49a;
-      --herb-beige: #f8efe2;
-      --bg-light: #f5f3f0;
-      --text-main: #222;
+      --green-dark: #166534;
+      --green-light: #e9f7ef;
+      --bg-light: #f5f5f5;
+      --bg-hero-top: #fff7ec;  /* 米色，溫暖 */
+      --bg-hero-bottom: #8ac8a3; /* 草本綠 */
+      --text-main: #1f2933;
       --text-sub: #555;
-      --card-radius: 16px;
-      --shadow-soft: 0 12px 28px rgba(0,0,0,0.07);
+      --card-radius: 14px;
+      --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.06);
     }
 
     * {
@@ -26,7 +27,7 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
         "PingFang TC", "Microsoft JhengHei", sans-serif;
-      background: radial-gradient(circle at top left, #fffaf5, #f5f3f0);
+      background: var(--bg-light);
       color: var(--text-main);
       line-height: 1.7;
     }
@@ -36,122 +37,79 @@
       color: inherit;
     }
 
-    /* ==== 頂級官網風 Header & LOGO 區 ==== */
-    .site-header {
+    /* 導覽列 */
+    header {
       position: sticky;
       top: 0;
-      z-index: 200;
-      background:
-        radial-gradient(circle at 0 0, #fff9f2, #ffffff);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-      border-bottom: 1px solid rgba(0,0,0,0.04);
+      z-index: 100;
+      background: linear-gradient(to right, #ffffff, #fff7ec);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
     }
 
     .nav-container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 12px 24px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    /* 左側品牌區 */
-    .brand-area {
+    .logo-block {
       display: flex;
       align-items: center;
       gap: 14px;
     }
 
-    .logo-frame {
-      width: 86px;
-      height: 86px;
-      border-radius: 26px;
-      padding: 11px;
-      background: radial-gradient(circle at 20% 0%, #fffaf3, #f3e0c5);
-      box-shadow: 0 12px 26px rgba(0,0,0,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
     .logo-img {
-      width: 100%;
-      height: auto;
+      height: 80px;            /* LOGO 放大 */
+      width: auto;
       object-fit: contain;
       display: block;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12)); /* 讓 LOGO 更有質感 */
     }
 
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .brand-kicker {
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--green-dark);
-      opacity: 0.85;
-    }
-
-    .brand-name {
-      font-size: 19px;
+    .logo-text-title {
       font-weight: 700;
-      color: var(--text-main);
+      font-size: 18px;
+      color: var(--green-dark);
+      letter-spacing: 1px;
     }
 
-    .brand-en {
+    .logo-text-sub {
       font-size: 13px;
-      color: var(--text-sub);
+      color: #6b7280;
     }
 
-    /* 導覽列樣式 */
-    .main-nav ul {
+    nav ul {
       display: flex;
-      gap: 20px;
+      gap: 22px;
       list-style: none;
       font-size: 14px;
-      color: var(--text-sub);
+      color: #4b5563;
     }
 
-    .main-nav li a {
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      transition: all .18s ease-out;
+    nav li a {
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.18s ease-out;
     }
 
-    .main-nav li a:hover {
-      border-color: rgba(47,158,68,0.2);
-      background: rgba(47,158,68,0.06);
-      color: var(--green-dark);
+    nav li a:hover {
+      border-color: var(--green-main);
+      color: var(--green-main);
     }
 
-    /* Hero 區塊（溫暖草本＋弧形背景） */
+    /* Hero 區塊 */
     .hero {
-      position: relative;
-      overflow: hidden;
-      background: radial-gradient(circle at top left, #fff5e9 0%, #e9f7ef 45%, #2f9e44 110%);
-      color: white;
-      padding: 72px 20px 80px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      left: -15%;
-      right: -15%;
-      bottom: -35%;
-      height: 60%;
-      background: radial-gradient(circle at top, rgba(255,255,255,0.5), transparent 60%);
-      opacity: 0.45;
+      background: radial-gradient(circle at 0% 0%, #fff9f0 0, #fff7ec 30%, transparent 55%),
+        linear-gradient(135deg, var(--bg-hero-top), var(--bg-hero-bottom));
+      color: var(--text-main);  /* 改成深色字，對比清楚 */
+      padding: 70px 20px 80px;
     }
 
     .hero-inner {
-      position: relative;
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
@@ -164,35 +122,39 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(255,255,255,0.18);
+      background: rgba(255, 255, 255, 0.8);
       border-radius: 999px;
-      padding: 4px 12px;
+      padding: 4px 10px;
       font-size: 12px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
+      color: #4b5563;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
 
     .hero-badge-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: #facc6b;
+      background: #f97316;
     }
 
     .hero h1 {
-      font-size: 30px;
+      font-size: 32px;
       margin-bottom: 14px;
       letter-spacing: 2px;
+      color: #14532d; /* 深綠，穩重清楚 */
+      text-shadow: 0 2px 6px rgba(255, 255, 255, 0.7);
     }
 
     .hero-subtitle {
       font-size: 16px;
-      opacity: 0.93;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+      color: #1f2937;
     }
 
     .hero-desc {
       font-size: 14px;
-      opacity: 0.92;
+      color: #374151;
       margin-bottom: 26px;
     }
 
@@ -210,10 +172,11 @@
       font-size: 14px;
       border: 1px solid transparent;
       cursor: pointer;
-      transition: all .18s ease-out;
+      transition: all 0.18s ease-out;
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      text-decoration: none;
     }
 
     .btn-main {
@@ -221,36 +184,36 @@
       color: var(--green-dark);
       border-color: transparent;
       font-weight: 600;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     }
 
     .btn-main:hover {
-      background: #fef9f2;
+      background: #f1fff6;
       transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.20);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
     }
 
     .btn-ghost {
-      background: rgba(255,255,255,0.10);
-      color: #fdfcfb;
-      border-color: rgba(255,255,255,0.65);
+      background: rgba(255, 255, 255, 0.2);
+      color: #14532d;
+      border-color: rgba(255, 255, 255, 0.7);
     }
 
     .btn-ghost:hover {
-      background: rgba(255,255,255,0.17);
+      background: rgba(255, 255, 255, 0.35);
     }
 
     .hero-tags {
       font-size: 12px;
-      opacity: 0.92;
+      color: #1f2937;
     }
 
     .hero-visual {
-      background: rgba(255,255,255,0.96);
+      background: rgba(255, 255, 255, 0.92);
       border-radius: 22px;
       padding: 18px 18px 20px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
-      color: var(--text-main);
+      box-shadow: 0 18px 40px rgba(15, 118, 110, 0.25);
+      backdrop-filter: blur(4px);
     }
 
     .hero-visual-title {
@@ -259,16 +222,16 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      opacity: 0.95;
+      color: #111827;
     }
 
     .pill {
       font-size: 11px;
       padding: 3px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(47,158,68,0.28);
-      background: rgba(233,247,239,0.9);
-      color: var(--green-dark);
+      border: 1px solid rgba(16, 185, 129, 0.6);
+      background: #ecfdf5;
+      color: #047857;
     }
 
     .hero-cards {
@@ -283,7 +246,8 @@
       border-radius: 12px;
       padding: 10px 11px;
       color: var(--text-main);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e5e7eb;
     }
 
     .hero-card-label {
@@ -317,6 +281,7 @@
     .section-title {
       font-size: 22px;
       margin-bottom: 8px;
+      color: #111827;
     }
 
     .section-subtitle {
@@ -389,7 +354,7 @@
 
     /* 產品概要區 */
     .products-section {
-      background: #fffdf9;
+      background: #ffffff;
     }
 
     .product-grid {
@@ -399,12 +364,11 @@
     }
 
     .product-card {
-      background: #f0f9f4;
+      background: var(--green-light);
       border-radius: var(--card-radius);
       padding: 16px 15px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.04);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
       font-size: 13px;
-      border: 1px solid rgba(47,158,68,0.06);
     }
 
     .product-card h3 {
@@ -418,7 +382,7 @@
       font-size: 11px;
       padding: 2px 8px;
       border-radius: 999px;
-      background: rgba(47,158,68,0.1);
+      background: rgba(47, 158, 68, 0.1);
       color: var(--green-dark);
       margin-bottom: 6px;
     }
@@ -490,7 +454,7 @@
 
     /* 聯絡資訊 */
     .contact-section {
-      background: #ffffff;
+      background: #fff;
     }
 
     .contact-grid {
@@ -509,15 +473,15 @@
       font-size: 15px;
       font-weight: 600;
       margin-bottom: 10px;
+      color: #111827;
     }
 
     .contact-card {
-      background: #f0f9f4;
+      background: var(--green-light);
       border-radius: var(--card-radius);
       padding: 16px 16px 14px;
       box-shadow: var(--shadow-soft);
       font-size: 13px;
-      border: 1px solid rgba(47,158,68,0.06);
     }
 
     .contact-card p {
@@ -536,21 +500,6 @@
 
     /* RWD */
     @media (max-width: 900px) {
-      .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      .logo-frame {
-        width: 72px;
-        height: 72px;
-      }
-
-      .brand-name {
-        font-size: 17px;
-      }
-
       .hero-inner,
       .about-grid,
       .product-grid,
@@ -560,69 +509,59 @@
       }
 
       .hero {
-        padding-top: 52px;
+        padding-top: 40px;
       }
 
       .hero-inner {
         gap: 26px;
       }
+
+      nav ul {
+        display: none; /* 手機版先簡化，之後可改漢堡選單 */
+      }
+
+      .nav-container {
+        justify-content: center;
+      }
     }
 
     @media (max-width: 600px) {
-      .nav-container {
-        padding: 10px 16px;
-      }
-
-      .brand-kicker {
-        font-size: 10px;
-      }
-
-      .main-nav ul {
-        gap: 14px;
-        font-size: 13px;
-      }
-
       .hero h1 {
         font-size: 24px;
       }
-
       .product-grid {
         grid-template-columns: 1fr;
       }
-
       section {
         padding-top: 40px;
         padding-bottom: 30px;
+      }
+      .logo-img {
+        height: 70px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- 頂級 LOGO＋導覽列 -->
-  <header class="site-header">
+  <!-- 導覽列 -->
+  <header>
     <div class="nav-container">
-      <!-- 左側：LOGO＋公司名稱 -->
-      <div class="brand-area">
-        <div class="logo-frame">
-          <img
-            src="https://raw.githubusercontent.com/lian2021719-ai/lian/main/LOGO01.png"
-            alt="立安生物科技 LOGO"
-            class="logo-img"
-          >
-        </div>
-
-        <div class="brand-text">
-          <div class="brand-kicker">中藥製劑・機能保健專業製造</div>
-          <div class="brand-name">立安生物科技製藥股份有限公司</div>
-          <div class="brand-en">Li-An Biotech</div>
+      <div class="logo-block">
+        <img
+          src="https://raw.githubusercontent.com/lian2021719-ai/lian/main/LOGO01.png"
+          class="logo-img"
+          alt="立安生物科技 LOGO"
+        />
+        <div>
+          <div class="logo-text-title">立安生物科技製藥股份有限公司</div>
+          <div class="logo-text-sub">Li-An Biotech</div>
         </div>
       </div>
 
-      <!-- 右側：導覽選單 -->
-      <nav class="main-nav">
+      <nav>
         <ul>
           <li><a href="#about">公司簡介</a></li>
-          <li><a href="#products">產品概述</a></li>
+          <li><a href="#products">產品概要</a></li>
           <li><a href="#quality">品質與製程</a></li>
           <li><a href="#contact">聯絡我們</a></li>
         </ul>
