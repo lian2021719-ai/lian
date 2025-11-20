@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>立安生物科技製藥股份有限公司 | Li-An Biotech</title>
   <style>
     :root {
-      --green-main: #2f9e44;
-      --green-dark: #1f7a34;
-      --green-light: #e9f7ef;
-      --bg-light: #f5f5f5;
+      --green-main: #3baf6b;
+      --green-dark: #237048;
+      --green-soft: #cfeedd;
+      --warm-sand: #f6eee1;
+      --bg-light: #fbf8f3;
       --text-main: #222;
-      --text-sub: #555;
-      --card-radius: 16px;
-      --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
+      --text-sub: #5a5a5a;
+      --card-radius: 18px;
+      --shadow-soft: 0 14px 32px rgba(0, 0, 0, 0.08);
     }
 
     * {
@@ -25,7 +26,7 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
         "PingFang TC", "Microsoft JhengHei", sans-serif;
-      background: var(--bg-light);
+      background: radial-gradient(circle at top, #ffffff 0, #fbf8f3 55%, #f3ebdd 100%);
       color: var(--text-main);
       line-height: 1.7;
     }
@@ -40,9 +41,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,0.97);
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(14px);
-      box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
     }
 
     .nav-container {
@@ -97,7 +98,7 @@
     nav li a {
       padding: 4px 0;
       border-bottom: 2px solid transparent;
-      transition: all .16s ease-out;
+      transition: all 0.16s ease-out;
     }
 
     nav li a:hover {
@@ -106,10 +107,30 @@
     }
 
     /* ===== Hero 區塊 ===== */
+    .hero-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
     .hero {
-      background: radial-gradient(circle at 0% 0%, #64dfb2 0, #2f9e44 40%, #215732 100%);
-      color: white;
-      padding: 70px 20px 80px;
+      background: radial-gradient(circle at 0% 0%, #ffeec5 0, #ccead8 35%, #3ba86d 80%);
+      color: #234034;
+      padding: 70px 20px 120px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 底部圓弧，讓過渡更柔和 */
+    .hero-wrapper::after {
+      content: "";
+      position: absolute;
+      left: -10%;
+      right: -10%;
+      bottom: -40px;
+      height: 80px;
+      background: #fbf8f3;
+      border-radius: 50% 50% 0 0;
+      z-index: 2;
     }
 
     .hero-inner {
@@ -125,18 +146,19 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(255,255,255,0.18);
+      background: rgba(255, 255, 255, 0.85);
       border-radius: 999px;
       padding: 4px 12px;
       font-size: 12px;
       margin-bottom: 18px;
+      color: #48624f;
     }
 
     .hero-badge-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: #a7f3d0;
+      background: #5ac38b;
     }
 
     .hero h1 {
@@ -147,8 +169,7 @@
 
     .hero-subtitle {
       font-size: 16px;
-      opacity: 0.95;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .hero-desc {
@@ -171,14 +192,14 @@
       font-size: 14px;
       border: 1px solid transparent;
       cursor: pointer;
-      transition: all .18s ease-out;
+      transition: all 0.18s ease-out;
       display: inline-flex;
       align-items: center;
       gap: 6px;
     }
 
     .btn-main {
-      background: #fff;
+      background: #ffffff;
       color: var(--green-dark);
       border-color: transparent;
       font-weight: 600;
@@ -186,46 +207,48 @@
     }
 
     .btn-main:hover {
-      background: #f1fff6;
+      background: #f4fff7;
       transform: translateY(-1px);
     }
 
     .btn-ghost {
-      background: transparent;
-      color: #e9f7ef;
-      border-color: rgba(255,255,255,0.7);
+      background: rgba(255, 255, 255, 0.1);
+      color: #f7fbf9;
+      border-color: rgba(255, 255, 255, 0.7);
     }
 
     .btn-ghost:hover {
-      background: rgba(255,255,255,0.12);
+      background: rgba(255, 255, 255, 0.2);
     }
 
     .hero-tags {
       font-size: 12px;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
     .hero-visual {
-      background: rgba(255,255,255,0.12);
-      border-radius: 22px;
-      padding: 18px 18px 20px;
-      box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 24px;
+      padding: 20px 20px 22px;
+      box-shadow: var(--shadow-soft);
     }
 
     .hero-visual-title {
       font-size: 14px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      opacity: 0.97;
+      color: #2d4737;
     }
 
     .pill {
       font-size: 11px;
       padding: 3px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.7);
+      border: 1px solid #d3e6da;
+      background: #f3faf6;
+      color: var(--green-dark);
     }
 
     .hero-cards {
@@ -236,10 +259,11 @@
     }
 
     .hero-card {
-      background: rgba(255,255,255,0.98);
-      border-radius: 12px;
+      background: #f7fbf8;
+      border-radius: 14px;
       padding: 10px 11px;
       color: var(--text-main);
+      border: 1px solid #e1eee5;
     }
 
     .hero-card-label {
@@ -282,6 +306,10 @@
     }
 
     /* 公司簡介 */
+    #about {
+      background: var(--bg-light);
+    }
+
     .about-grid {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
@@ -320,11 +348,12 @@
     }
 
     .about-card {
-      background: #fff;
+      background: #ffffff;
       border-radius: var(--card-radius);
       box-shadow: var(--shadow-soft);
-      padding: 18px 18px 16px;
+      padding: 20px 20px 18px;
       font-size: 13px;
+      border: 1px solid #e7e1d6;
     }
 
     .about-card h3 {
@@ -345,7 +374,7 @@
 
     /* 產品概要區 */
     .products-section {
-      background: #fff;
+      background: #fffdf8;
     }
 
     .product-grid {
@@ -355,11 +384,12 @@
     }
 
     .product-card {
-      background: var(--green-light);
+      background: #f4faf5;
       border-radius: var(--card-radius);
-      padding: 16px 15px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.04);
+      padding: 18px 16px;
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.04);
       font-size: 13px;
+      border: 1px solid #dfece2;
     }
 
     .product-card h3 {
@@ -371,9 +401,9 @@
     .product-tag {
       display: inline-block;
       font-size: 11px;
-      padding: 2px 8px;
+      padding: 3px 9px;
       border-radius: 999px;
-      background: rgba(47,158,68,0.1);
+      background: rgba(47, 158, 68, 0.08);
       color: var(--green-dark);
       margin-bottom: 6px;
     }
@@ -385,7 +415,7 @@
 
     /* 品質 / 製程 */
     .quality-section {
-      background: #f0f4f1;
+      background: var(--warm-sand);
     }
 
     .quality-grid {
@@ -426,11 +456,12 @@
     }
 
     .quality-card {
-      background: white;
+      background: #fff;
       border-radius: var(--card-radius);
-      padding: 16px 16px 14px;
+      padding: 18px 18px 16px;
       box-shadow: var(--shadow-soft);
       font-size: 13px;
+      border: 1px solid #e7ddcc;
     }
 
     .badge-soft {
@@ -438,14 +469,15 @@
       font-size: 11px;
       padding: 2px 8px;
       border-radius: 999px;
-      background: #e9f7ef;
+      background: #f6fbf8;
       color: var(--green-dark);
       margin-bottom: 6px;
+      border: 1px solid #dfece2;
     }
 
     /* 聯絡資訊 */
     .contact-section {
-      background: #fff;
+      background: #ffffff;
     }
 
     .contact-grid {
@@ -467,11 +499,12 @@
     }
 
     .contact-card {
-      background: var(--green-light);
+      background: #f4faf5;
       border-radius: var(--card-radius);
-      padding: 16px 16px 14px;
+      padding: 18px 18px 16px;
       box-shadow: var(--shadow-soft);
       font-size: 13px;
+      border: 1px solid #dfece2;
     }
 
     .contact-card p {
@@ -484,8 +517,8 @@
       padding: 16px 10px 22px;
       font-size: 12px;
       color: #777;
-      background: #f3f3f3;
-      border-top: 1px solid #e3e3e3;
+      background: #f3ede4;
+      border-top: 1px solid #e1d3c1;
     }
 
     /* ===== RWD ===== */
@@ -507,7 +540,7 @@
       }
 
       nav ul {
-        display: none; /* 手機版暫時隱藏選單，未做漢堡選單 */
+        display: none; /* 手機版暫時隱藏選單 */
       }
 
       .nav-container {
@@ -544,7 +577,7 @@
           src="https://raw.githubusercontent.com/lian2021719-ai/lian/main/LOGO01.png"
           class="logo-img"
           alt="立安生物科技 LOGO"
-        >
+        />
         <div class="company-text">
           <div>立安生物科技製藥股份有限公司</div>
           <small>Li-An Biotech</small>
@@ -562,60 +595,64 @@
     </div>
   </header>
 
-  <!-- Hero 區 -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div>
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          中藥製程 × 保健食品 × 品質系統
+  <!-- Hero 區（外面多包一層做弧形） -->
+  <div class="hero-wrapper">
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            中藥製程 × 保健食品 × 品質系統
+          </div>
+          <h1>專注中藥與保健食品製造的專業夥伴</h1>
+          <p class="hero-subtitle">
+            從配方開發、製程設計到品質驗證，陪您一起把好產品做對、做好。
+          </p>
+          <p class="hero-desc">
+            立安生物科技製藥股份有限公司扎根台灣，整合中藥製劑、營養補充品與 GMP/ISO 品質管理，
+            為客戶提供穩定、安全且具市場競爭力的產品解決方案。
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn-main">洽談合作</a>
+            <a href="#products" class="btn-ghost">了解主要產品</a>
+          </div>
+          <div class="hero-tags">
+            中藥粉劑｜膠囊劑｜錠劑｜客製化配方｜OEM / ODM
+          </div>
         </div>
-        <h1>專注中藥與保健食品製造的專業夥伴</h1>
-        <p class="hero-subtitle">從配方開發、製程設計到品質驗證，陪您一起把好產品做對、做好。</p>
-        <p class="hero-desc">
-          立安生物科技製藥股份有限公司扎根台灣，整合中藥製劑、營養補充品與 GMP/ISO 品質管理，
-          為客戶提供穩定、安全且具市場競爭力的產品解決方案。
-        </p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn-main">洽談合作</a>
-          <a href="#products" class="btn-ghost">了解主要產品</a>
-        </div>
-        <div class="hero-tags">
-          中藥粉劑｜膠囊劑｜錠劑｜客製化配方｜OEM / ODM
-        </div>
-      </div>
 
-      <!-- 右側摘要卡片 -->
-      <div class="hero-visual">
-        <div class="hero-visual-title">
-          核心服務一覽
-          <span class="pill">GMP &amp; QA / QC</span>
-        </div>
-        <div class="hero-cards">
-          <div class="hero-card">
-            <div class="hero-card-label">製劑與配方</div>
-            <div class="hero-card-value">中藥製劑 / 功能保健配方</div>
-            <div class="hero-card-note">粉包、膠囊、錠劑等多種劑型開發。</div>
+        <!-- 右側摘要卡片 -->
+        <div class="hero-visual">
+          <div class="hero-visual-title">
+            核心服務一覽
+            <span class="pill">GMP &amp; QA / QC</span>
           </div>
-          <div class="hero-card">
-            <div class="hero-card-label">品質管理</div>
-            <div class="hero-card-value">GMP、ISO 系統導入</div>
-            <div class="hero-card-note">重金屬、微生物、含量均一等項目檢驗。</div>
-          </div>
-          <div class="hero-card">
-            <div class="hero-card-label">技術支援</div>
-            <div class="hero-card-value">藥師與研發團隊</div>
-            <div class="hero-card-note">協助審查文件、標示與法規顧問。</div>
-          </div>
-          <div class="hero-card">
-            <div class="hero-card-label">合作模式</div>
-            <div class="hero-card-value">OEM / ODM / 聯合開發</div>
-            <div class="hero-card-note">彈性生產，配合品牌與通路需求。</div>
+          <div class="hero-cards">
+            <div class="hero-card">
+              <div class="hero-card-label">製劑與配方</div>
+              <div class="hero-card-value">中藥製劑 / 功能保健配方</div>
+              <div class="hero-card-note">粉包、膠囊、錠劑等多種劑型開發。</div>
+            </div>
+            <div class="hero-card">
+              <div class="hero-card-label">品質管理</div>
+              <div class="hero-card-value">GMP、ISO 系統導入</div>
+              <div class="hero-card-note">重金屬、微生物、含量均一等項目檢驗。</div>
+            </div>
+            <div class="hero-card">
+              <div class="hero-card-label">技術支援</div>
+              <div class="hero-card-value">藥師與研發團隊</div>
+              <div class="hero-card-note">協助審查文件、標示與法規顧問。</div>
+            </div>
+            <div class="hero-card">
+              <div class="hero-card-label">合作模式</div>
+              <div class="hero-card-value">OEM / ODM / 聯合開發</div>
+              <div class="hero-card-note">彈性生產，配合品牌與通路需求。</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <!-- 公司簡介 -->
   <section id="about">
