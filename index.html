@@ -6,16 +6,14 @@
   <title>立安生物科技製藥股份有限公司 | Li-An Biotech</title>
   <style>
     :root {
-      --green-main: #2f9e44;
-      --green-dark: #166534;
-      --green-light: #e9f7ef;
-      --bg-light: #f5f5f5;
-      --bg-hero-top: #fff7ec;  /* 米色，溫暖 */
-      --bg-hero-bottom: #8ac8a3; /* 草本綠 */
-      --text-main: #1f2933;
-      --text-sub: #555;
-      --card-radius: 14px;
-      --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.06);
+      --green-main: #2f8f58;
+      --green-deep: #206043;
+      --green-soft: #e5f3ea;
+      --warm-bg: #f8f0e6;
+      --text-main: #1f2a33;
+      --text-sub: #5a656f;
+      --card-radius: 18px;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.06);
     }
 
     * {
@@ -27,59 +25,80 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
         "PingFang TC", "Microsoft JhengHei", sans-serif;
-      background: var(--bg-light);
+      background: #f5f3f0;
       color: var(--text-main);
       line-height: 1.7;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
-    /* 導覽列 */
+    /* ====== 頂部導覽（溫暖、有點高級感） ====== */
+
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: linear-gradient(to right, #ffffff, #fff7ec);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+      background: rgba(252, 249, 244, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
     }
 
-    .nav-container {
-      max-width: 1100px;
+    .nav-shell {
+      max-width: 1180px;
       margin: 0 auto;
       padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
 
-    .logo-block {
+    .brand-group {
       display: flex;
       align-items: center;
       gap: 14px;
     }
 
+    .logo-wrap {
+      width: 88px;
+      height: 88px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #fffdf8, #f1e1cd);
+      box-shadow: 0 10px 24px rgba(140, 103, 60, 0.14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
     .logo-img {
-      height: 80px;            /* LOGO 放大 */
+      height: 76px;          /* 這裡是 LOGO 大小，想再大可以改這行 */
       width: auto;
       object-fit: contain;
       display: block;
-      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12)); /* 讓 LOGO 更有質感 */
     }
 
-    .logo-text-title {
-      font-weight: 700;
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-text-main {
       font-size: 18px;
-      color: var(--green-dark);
-      letter-spacing: 1px;
+      letter-spacing: 0.3em;
+      color: var(--green-deep);
+      font-weight: 700;
+      white-space: nowrap;
     }
 
-    .logo-text-sub {
+    .brand-text-sub {
       font-size: 13px;
-      color: #6b7280;
+      color: var(--text-sub);
     }
 
     nav ul {
@@ -87,88 +106,88 @@
       gap: 22px;
       list-style: none;
       font-size: 14px;
-      color: #4b5563;
+      color: var(--text-sub);
     }
 
     nav li a {
-      padding: 4px 0;
+      padding: 6px 0;
       border-bottom: 2px solid transparent;
       transition: all 0.18s ease-out;
     }
 
     nav li a:hover {
       border-color: var(--green-main);
-      color: var(--green-main);
+      color: var(--green-deep);
     }
 
-    /* Hero 區塊 */
+    /* ====== Hero 區（字要清楚、背景暖一點） ====== */
+
     .hero {
-      background: radial-gradient(circle at 0% 0%, #fff9f0 0, #fff7ec 30%, transparent 55%),
-        linear-gradient(135deg, var(--bg-hero-top), var(--bg-hero-bottom));
-      color: var(--text-main);  /* 改成深色字，對比清楚 */
-      padding: 70px 20px 80px;
+      background:
+        radial-gradient(circle at 0% 0%, #fff7eb 0%, #f8efe2 38%, #d6ecda 100%);
+      padding: 68px 20px 72px;
     }
 
     .hero-inner {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
-      gap: 40px;
+      grid-template-columns: minmax(0, 3.2fr) minmax(0, 2.5fr);
+      gap: 46px;
       align-items: center;
     }
 
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.8);
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 999px;
-      padding: 4px 10px;
+      padding: 6px 14px;
       font-size: 12px;
-      margin-bottom: 16px;
-      color: #4b5563;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      color: var(--green-deep);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+      margin-bottom: 18px;
     }
 
     .hero-badge-dot {
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: #f97316;
+      background: var(--green-main);
     }
 
     .hero h1 {
       font-size: 32px;
       margin-bottom: 14px;
-      letter-spacing: 2px;
-      color: #14532d; /* 深綠，穩重清楚 */
-      text-shadow: 0 2px 6px rgba(255, 255, 255, 0.7);
+      letter-spacing: 0.18em;
+      color: var(--text-main);
     }
 
     .hero-subtitle {
-      font-size: 16px;
-      margin-bottom: 18px;
-      color: #1f2937;
+      font-size: 17px;
+      margin-bottom: 16px;
+      color: var(--text-main);
     }
 
     .hero-desc {
       font-size: 14px;
-      color: #374151;
+      color: var(--text-sub);
       margin-bottom: 26px;
+      max-width: 34em;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px;
+      gap: 12px;
+      margin-bottom: 14px;
     }
 
     .btn-main,
     .btn-ghost {
       border-radius: 999px;
-      padding: 9px 20px;
+      padding: 9px 24px;
       font-size: 14px;
       border: 1px solid transparent;
       cursor: pointer;
@@ -180,40 +199,39 @@
     }
 
     .btn-main {
-      background: #fff;
-      color: var(--green-dark);
-      border-color: transparent;
+      background: linear-gradient(135deg, #2f8f58, #47b37a);
+      color: #fff;
+      box-shadow: 0 14px 26px rgba(27, 94, 53, 0.3);
       font-weight: 600;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     }
 
     .btn-main:hover {
-      background: #f1fff6;
       transform: translateY(-1px);
-      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 18px 34px rgba(27, 94, 53, 0.35);
     }
 
     .btn-ghost {
-      background: rgba(255, 255, 255, 0.2);
-      color: #14532d;
-      border-color: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--green-deep);
+      border-color: rgba(47, 143, 88, 0.25);
     }
 
     .btn-ghost:hover {
-      background: rgba(255, 255, 255, 0.35);
+      background: #ffffff;
+      border-color: var(--green-main);
     }
 
     .hero-tags {
       font-size: 12px;
-      color: #1f2937;
+      color: var(--text-sub);
     }
 
     .hero-visual {
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.96);
       border-radius: 22px;
-      padding: 18px 18px 20px;
-      box-shadow: 0 18px 40px rgba(15, 118, 110, 0.25);
-      backdrop-filter: blur(4px);
+      padding: 20px 20px 22px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.6);
     }
 
     .hero-visual-title {
@@ -222,16 +240,16 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: #111827;
+      color: var(--text-main);
     }
 
     .pill {
       font-size: 11px;
       padding: 3px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(16, 185, 129, 0.6);
-      background: #ecfdf5;
-      color: #047857;
+      border: 1px solid rgba(31, 99, 66, 0.28);
+      color: var(--green-deep);
+      background: #f3faf6;
     }
 
     .hero-cards {
@@ -242,12 +260,10 @@
     }
 
     .hero-card {
-      background: #ffffff;
-      border-radius: 12px;
+      background: #f9fcfb;
+      border-radius: 14px;
       padding: 10px 11px;
-      color: var(--text-main);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
-      border: 1px solid #e5e7eb;
+      border: 1px solid #e2f0e6;
     }
 
     .hero-card-label {
@@ -259,7 +275,7 @@
     .hero-card-value {
       font-size: 14px;
       font-weight: 600;
-      color: var(--green-dark);
+      color: var(--green-deep);
     }
 
     .hero-card-note {
@@ -268,20 +284,21 @@
       margin-top: 3px;
     }
 
-    /* 通用區塊 */
+    /* ====== 共用 section ====== */
+
     section {
-      padding: 60px 20px 40px;
+      padding: 60px 20px 44px;
     }
 
     .section-inner {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
     }
 
     .section-title {
       font-size: 22px;
       margin-bottom: 8px;
-      color: #111827;
+      color: var(--text-main);
     }
 
     .section-subtitle {
@@ -290,7 +307,8 @@
       margin-bottom: 26px;
     }
 
-    /* 公司簡介 */
+    /* ====== 公司簡介 ====== */
+
     .about-grid {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
@@ -314,8 +332,8 @@
       font-size: 12px;
       padding: 6px 10px;
       border-radius: 999px;
-      background: #fff;
-      border: 1px solid #e3e3e3;
+      background: #ffffff;
+      border: 1px solid #e5e1d9;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -329,17 +347,18 @@
     }
 
     .about-card {
-      background: #fff;
+      background: #ffffff;
       border-radius: var(--card-radius);
       box-shadow: var(--shadow-soft);
-      padding: 18px 18px 16px;
+      padding: 20px 20px 18px;
       font-size: 13px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
     }
 
     .about-card h3 {
       font-size: 15px;
       margin-bottom: 8px;
-      color: var(--green-dark);
+      color: var(--green-deep);
     }
 
     .about-list {
@@ -352,9 +371,12 @@
       color: var(--text-sub);
     }
 
-    /* 產品概要區 */
+    /* ====== 產品概要 ====== */
+
     .products-section {
-      background: #ffffff;
+      background: #fffdf9;
+      border-top: 1px solid rgba(0, 0, 0, 0.03);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
     }
 
     .product-grid {
@@ -364,17 +386,18 @@
     }
 
     .product-card {
-      background: var(--green-light);
+      background: var(--green-soft);
       border-radius: var(--card-radius);
       padding: 16px 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.04);
       font-size: 13px;
+      border: 1px solid #e0efe5;
     }
 
     .product-card h3 {
       font-size: 15px;
       margin-bottom: 6px;
-      color: var(--green-dark);
+      color: var(--green-deep);
     }
 
     .product-tag {
@@ -382,8 +405,8 @@
       font-size: 11px;
       padding: 2px 8px;
       border-radius: 999px;
-      background: rgba(47, 158, 68, 0.1);
-      color: var(--green-dark);
+      background: rgba(47, 143, 88, 0.1);
+      color: var(--green-deep);
       margin-bottom: 6px;
     }
 
@@ -392,9 +415,10 @@
       margin-bottom: 4px;
     }
 
-    /* 品質 / 製程 */
+    /* ====== 品質與製程 ====== */
+
     .quality-section {
-      background: #f0f4f1;
+      background: #f3f5f2;
     }
 
     .quality-grid {
@@ -413,7 +437,7 @@
     .steps li {
       counter-increment: qstep;
       margin-bottom: 10px;
-      padding-left: 26px;
+      padding-left: 28px;
       position: relative;
       color: var(--text-sub);
     }
@@ -423,8 +447,8 @@
       position: absolute;
       left: 0;
       top: 2px;
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       background: var(--green-main);
       color: #fff;
@@ -432,6 +456,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 6px 14px rgba(29, 94, 61, 0.4);
     }
 
     .quality-card {
@@ -440,6 +465,7 @@
       padding: 16px 16px 14px;
       box-shadow: var(--shadow-soft);
       font-size: 13px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
     }
 
     .badge-soft {
@@ -448,13 +474,14 @@
       padding: 2px 8px;
       border-radius: 999px;
       background: #e9f7ef;
-      color: var(--green-dark);
+      color: var(--green-deep);
       margin-bottom: 6px;
     }
 
-    /* 聯絡資訊 */
+    /* ====== 聯絡我們 ====== */
+
     .contact-section {
-      background: #fff;
+      background: #ffffff;
     }
 
     .contact-grid {
@@ -473,15 +500,16 @@
       font-size: 15px;
       font-weight: 600;
       margin-bottom: 10px;
-      color: #111827;
+      color: var(--text-main);
     }
 
     .contact-card {
-      background: var(--green-light);
+      background: var(--green-soft);
       border-radius: var(--card-radius);
       padding: 16px 16px 14px;
       box-shadow: var(--shadow-soft);
       font-size: 13px;
+      border: 1px solid #ddebe2;
     }
 
     .contact-card p {
@@ -494,12 +522,24 @@
       padding: 16px 10px 22px;
       font-size: 12px;
       color: #777;
-      background: #f3f3f3;
-      border-top: 1px solid #e3e3e3;
+      background: #f1efec;
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
     }
 
-    /* RWD */
+    /* ====== RWD ====== */
+
     @media (max-width: 900px) {
+      .nav-shell {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 12px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
       .hero-inner,
       .about-grid,
       .product-grid,
@@ -513,19 +553,25 @@
       }
 
       .hero-inner {
-        gap: 26px;
-      }
-
-      nav ul {
-        display: none; /* 手機版先簡化，之後可改漢堡選單 */
-      }
-
-      .nav-container {
-        justify-content: center;
+        gap: 28px;
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
+      .logo-wrap {
+        width: 72px;
+        height: 72px;
+      }
+      .logo-img {
+        height: 60px;
+      }
+      .brand-text-main {
+        font-size: 16px;
+        letter-spacing: 0.18em;
+      }
+      nav ul {
+        font-size: 13px;
+      }
       .hero h1 {
         font-size: 24px;
       }
@@ -536,28 +582,28 @@
         padding-top: 40px;
         padding-bottom: 30px;
       }
-      .logo-img {
-        height: 70px;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- 導覽列 -->
+  <!-- ====== 導覽列 ====== -->
   <header>
-    <div class="nav-container">
-      <div class="logo-block">
-       <img src="https://github.com/lian2021719-ai/lian/blob/main/LOGO011.png" class="logo-img" alt="立安生物科技 LOGO">
-        <div>
-          <div class="logo-text-title">立安生物科技製藥股份有限公司</div>
-          <div class="logo-text-sub">Li-An Biotech</div>
+    <div class="nav-shell">
+      <div class="brand-group">
+        <div class="logo-wrap">
+          <!-- 這裡用相對路徑，因為 LOGO011.png 跟 index.html 在同一層 -->
+          <img src="LOGO011.png" alt="立安生物科技 LOGO" class="logo-img" />
+        </div>
+        <div class="brand-text">
+          <div class="brand-text-main">立安生物科技製藥股份有限公司</div>
+          <div class="brand-text-sub">Li-An Biotech · 中藥製劑．保健食品．客製化開發</div>
         </div>
       </div>
 
       <nav>
         <ul>
           <li><a href="#about">公司簡介</a></li>
-          <li><a href="#products">產品概要</a></li>
+          <li><a href="#products">產品與配方</a></li>
           <li><a href="#quality">品質與製程</a></li>
           <li><a href="#contact">聯絡我們</a></li>
         </ul>
@@ -565,8 +611,8 @@
     </div>
   </header>
 
-  <!-- Hero 區 -->
-  <section class="hero">
+  <!-- ====== Hero 區 ====== -->
+  <section class="hero" id="top">
     <div class="hero-inner">
       <div>
         <div class="hero-badge">
@@ -578,7 +624,7 @@
           從配方開發、製程設計到品質驗證，陪您一起把好產品做對、做好。
         </p>
         <p class="hero-desc">
-          立安生物科技製藥股份有限公司扎根台灣，整合中藥製劑、營養補充品與 GMP/ISO 品質管理，
+          立安生物科技製藥股份有限公司扎根台灣，整合中藥製劑、營養補充品與 GMP / ISO 品質管理，
           為客戶提供穩定、安全且具市場競爭力的產品解決方案。
         </p>
         <div class="hero-actions">
@@ -590,7 +636,6 @@
         </div>
       </div>
 
-      <!-- 右側小卡 -->
       <div class="hero-visual">
         <div class="hero-visual-title">
           核心服務一覽
@@ -622,7 +667,7 @@
     </div>
   </section>
 
-  <!-- 公司簡介 -->
+  <!-- ====== 公司簡介 ====== -->
   <section id="about">
     <div class="section-inner">
       <h2 class="section-title">公司簡介</h2>
@@ -643,7 +688,7 @@
 
           <div class="about-highlights">
             <div class="tag-chip">
-              <span class="tag-dot"></span> 中藥飲片 / 植物萃取應用
+              <span class="tag-dot"></span> 中藥飲片／植物萃取應用
             </div>
             <div class="tag-chip">
               <span class="tag-dot"></span> GMP、ISO 品質與文件管理
@@ -652,7 +697,7 @@
               <span class="tag-dot"></span> 功能性配方開發與調整
             </div>
             <div class="tag-chip">
-              <span class="tag-dot"></span> 客製化少量試產 / 打樣
+              <span class="tag-dot"></span> 客製化少量試產／打樣
             </div>
           </div>
         </div>
@@ -676,7 +721,7 @@
     </div>
   </section>
 
-  <!-- 產品概要 -->
+  <!-- ====== 產品概要 ====== -->
   <section id="products" class="products-section">
     <div class="section-inner">
       <h2 class="section-title">產品與配方概要</h2>
@@ -686,7 +731,7 @@
 
       <div class="product-grid">
         <div class="product-card">
-          <div class="product-tag">中藥 / 機能粉劑</div>
+          <div class="product-tag">中藥／機能粉劑</div>
           <h3>經典方劑與機能性配方</h3>
           <p>如十味敗毒散、補氣養血類配方等，可依需求調整藥材比例與飲用方式。</p>
           <p>適用沖泡包、鋁袋、條包等包裝型式。</p>
@@ -700,7 +745,7 @@
         </div>
 
         <div class="product-card">
-          <div class="product-tag">OEM / ODM</div>
+          <div class="product-tag">OEM／ODM</div>
           <h3>客製化開發專案</h3>
           <p>從概念發想到實際商品化，協助試作品、穩定度觀察與量產導入。</p>
           <p>提供包材建議、外盒與標籤內容規劃之相關意見。</p>
@@ -709,7 +754,7 @@
     </div>
   </section>
 
-  <!-- 品質與製程 -->
+  <!-- ====== 品質與製程 ====== -->
   <section id="quality" class="quality-section">
     <div class="section-inner">
       <h2 class="section-title">品質與製程管理</h2>
@@ -742,7 +787,7 @@
     </div>
   </section>
 
-  <!-- 聯絡我們 -->
+  <!-- ====== 聯絡我們 ====== -->
   <section id="contact" class="contact-section">
     <div class="section-inner">
       <h2 class="section-title">聯絡我們</h2>
@@ -759,9 +804,9 @@
 
         <div class="contact-card">
           <p><strong>立安生物科技製藥股份有限公司</strong></p>
-          <p>電話：<span>（06-6981929）</span></p>
-          <p>Email：<span>（請填入您的對外聯絡信箱，例如 service@xxxx.com）</span></p>
-          <p>地址：<span>（720008台南市官田區工業路3號）</span></p>
+          <p>電話：<span>06-6981929</span></p>
+          <p>Email：<span>（請填入對外聯絡信箱，例如 service@xxxx.com）</span></p>
+          <p>地址：<span>720008 台南市官田區工業路 3 號</span></p>
           <p style="margin-top:8px;">若您已經是合作夥伴，也可透過既有窗口與我們聯繫。</p>
         </div>
       </div>
@@ -773,7 +818,6 @@
   </footer>
 
   <script>
-    // 自動帶入年份
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
